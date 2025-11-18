@@ -1,0 +1,84 @@
+body {
+    background-color: rgb(11, 11, 51);
+}
+
+#title{
+    color: white;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+label{
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#login-box {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    justify-self: center;
+    align-self: center;
+    width: 20%;
+    height: auto;
+    padding: 2%;
+    margin: 0;
+    border: 3px solid black;
+    border-radius: 5%;
+}
+
+
+input[type="text"], input[type="email"], input[type="password"], input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#btn-login{
+    display:flex;
+    background-color: rgb(25, 161, 36);
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    margin-top: 5%;
+    width: 100%;
+    justify-content: center;
+    place-self: center;
+    align-self: center;
+    border: 1px solid white;
+    border-radius: 10px;
+    cursor: pointer;
+
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#btn-login:hover {
+    background-color: rgb(3, 97, 3);
+    transform: scale(1.05);
+}
+
+button{
+    display:flex;
+    background-color:   rgb(73, 74, 156);
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    margin-top: 5%;
+    width: 100%;
+    justify-content: center;
+    place-self: center;
+    align-self: center;
+    border: 1px solid white;
+    border-radius: 10px;
+    cursor: pointer;
+
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: rgb(7, 7, 75);
+    transform: scale(1.05);
+}
