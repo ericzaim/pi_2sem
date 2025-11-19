@@ -5,6 +5,8 @@ document.getElementById('form-cadastro').addEventListener('submit', async (event
     const email = document.getElementById('email').value;
     const password = document.getElementById('senha').value;
 
+    console.log('Dados do formulário:', { nome, email, password });
+
     const response = await fetch('https://pi-2sem.onrender.com/api/user', {
         method: 'POST',
         headers: {
