@@ -1,6 +1,6 @@
 async function loadUsers() {
     try {
-        const response = await fetch("http://localhost:3000/api/users");
+        const response = await fetch("https://pi-2sem.onrender.com/api/users");
         const users = await response.json();
 
         const tbody = document.getElementById("user-table-body");
