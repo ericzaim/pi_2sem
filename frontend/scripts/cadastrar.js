@@ -10,7 +10,7 @@ document.getElementById('form-cadastro').addEventListener('submit', async (event
         headers: {
             'Content-Type': 'application/json'
         },
-        body: { nome, email, senha }
+        body: JSON.stringify({ nome, email, senha })
     });
     
     if (response.ok) {
