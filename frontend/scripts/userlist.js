@@ -76,8 +76,8 @@ async function submitEdit(event) {
 
     if (response.ok) {
         alert("Usuário atualizado!");
-        location.reload();
         document.getElementById("edit-form").style.display = "none";
+        location.reload();
     } else {
         alert("Erro ao atualizar.");
     }
