@@ -18,7 +18,7 @@ document.getElementById('form-cadastro').addEventListener('submit', async (event
     if (response.ok) {
         alert('Usuário cadastrado com sucesso!');
         document.getElementById('form-cadastro').reset();
-        window.location.href = 'login.html';
+        window.location.href = 'index.html';
     } else {
         alert('Erro ao cadastrar usuário. Tente novamente.');
     }
