@@ -6,9 +6,9 @@ import { User } from '../entities/User';
 export async function getUsers(req:Request, res:Response){
     try{
         const result = await findUsers();
-        const users = result.map(user => toResponseDto(user));
+        // const users = result.map(user => toResponseDto(user));
 
-        return res.status(200).json(users);
+        return res.status(200).json(result);
     }catch(err){
         throw err;
     }

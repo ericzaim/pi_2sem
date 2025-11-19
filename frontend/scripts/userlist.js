@@ -10,8 +10,10 @@ async function loadUsers() {
             const row = document.createElement("tr");
 
             row.innerHTML = `
+                <td>${user.id}</td>
                 <td>${user.nome}</td>
                 <td>${user.email}</td>
+                <td>${user.password}</td>
             `;
 
             tbody.appendChild(row);
