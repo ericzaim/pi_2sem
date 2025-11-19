@@ -1,5 +1,5 @@
 import type { Request, Response } from 'express';
-import { deleteUser, findUserBy, findUsers, insertUser } from '../repositories/user.repository';
+import { deleteUser, findUserBy, findUsers, insertUser, updateUser } from '../repositories/user.repository';
 import { UserReponseDto } from '../dto/UserResponseDto';
 import { User } from '../entities/User';
 
@@ -46,7 +46,7 @@ export function patchUser(req:Request, res: Response){
     const { id, nome, email, password } = req.body;
     
     try{
-        updateUser(id, nome, email, password);
+        updateUser(Number(id), nome, email, password);
         return res.status(200).json({ message: 'User updated successfully' });
     }catch(err){
         throw err;
@@ -70,7 +70,3 @@ function toResponseDto(user:User){
         user.getEmail()
     )
 }
-function updateUser(id: any, nome: any, email: any, password: any) {
-    throw new Error('Function not implemented.');
-}
-

@@ -15,7 +15,8 @@ async function loadUsers() {
                 <td>${user.email}</td>
                 <td>${user.password}</td>
                 <td>
-                    <button id="btn-delete" onclick="deleteUser(${user.id})">Delete</button> 
+                    <button onclick='openEditForm(${JSON.stringify(user)})'>Alterar</button>
+                    <button id="btn-delete" onclick="deleteUser(${user.id})">Delete</button>
                 </td>
             `;
 
@@ -46,3 +47,38 @@ deleteUser = async (id) => {
         console.error("Erro ao deletar usuário:", error);
     }
 }
+
+    function openEditForm(user) {
+        document.getElementById("edit-id").value = user.id;
+        document.getElementById("edit-name").value = user.nome;
+        document.getElementById("edit-email").value = user.email;
+        document.getElementById("edit-password").value = user.password;
+
+        document.getElementById("edit-form").style.display = "block";
+    }
+
+    async function submitEdit(event) {
+        event.preventDefault();
+
+        const id = document.getElementById("edit-id").value;
+        console.log(id)
+
+        const response = await fetch(`https://pi-2sem.onrender.com/api/user`, {
+            method: "PATCH",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                id: id,
+                nome: document.getElementById("edit-name").value,
+                email: document.getElementById("edit-email").value,
+                password: document.getElementById("edit-password").value
+            })
+        });
+
+        if (response.ok) {
+            alert("Usuário atualizado!");
+            location.reload();
+            document.getElementById("edit-form").style.display = "none";
+        } else {
+            alert("Erro ao atualizar.");
+        }
+    }
